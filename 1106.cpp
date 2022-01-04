@@ -26,7 +26,7 @@ int main() {
   int i =1, j = 1;
   int temp;
 
-  for(int i =1; i<1001; i++){
+  for(int i =1; i<=c; i++){
     temp = j * cus[0];
     if(i <= temp){
       dp[0][i] = cost[0] * j;
@@ -38,7 +38,7 @@ int main() {
   }
 
   for(int i =1; i<n; i++){
-    for(int j  =1; j<1001; j++){
+    for(int j  =1; j<=c; j++){
       if(j < cus[i]) dp[i][j] = min(dp[i-1][j] , cost[i]);
       else{
         dp[i][j] = min(dp[i-1][j-cus[i]] + cost[i], dp[i-1][j]);
